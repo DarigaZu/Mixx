@@ -1,0 +1,98 @@
+* {
+    font-family: "Lato";
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        width: 130px;
+        height: 100px;
+    }
+
+    &_menu {
+        // ОТСТУП СВЕРХУ НАДО ДОБАВИТЬ
+        margin-top: 20px;
+        display: flex;
+        gap: 100px;
+
+        p {
+
+            &:hover {
+                color: gray;
+                transition: 0.3s;
+            }
+        }
+
+
+        p {
+            font-size: 24px;
+            font-weight: 500;
+            color: black;
+        }
+
+        
+
+    }
+
+    &_icons {
+        // ОТСТУП СВЕРХУ НАДО ДОБАВИТЬ
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        &_icon {
+            font-size: 23px;
+            color: black;
+            &:hover{
+                color: gray;
+                transition: 0.3s;
+            }
+        }
+
+        &_dropdown {
+            position: relative;
+            display: inline-block;
+            p {
+                &:hover {
+                    color: gray;
+                    transition: 0.3s;
+                }
+            }
+
+            &:hover &_content {
+                display: block;
+            }
+            &_content {
+                margin-top: 20px;
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 170px;
+                margin-left: -30px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                padding: 12px 16px;
+                z-index: 1;
+
+                p {
+                    color: b;
+                    font-size: 16px;
+                    margin-top: 12px;
+                    margin-bottom: 5px;
+
+                    &:hover {
+                        color: gray;
+                        transition: 0.3s;
+                        transform: translateX(8px);
+                        /* Перемещение текста вправо при наведении */
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.category{
+    position: relative;
+    margin-top: 20px;
+    &_img{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        img{
+            width: 500px;
+            height: 545px;
+            &:hover{
+                transition: 0.3s;
+                transform: scale(1.05);
+            }
+        }
+    }
+    &_text{
+        position: relative;
+        p{
+            position: absolute;
+            font-size: 16px;
+        }
+
+    }
+}

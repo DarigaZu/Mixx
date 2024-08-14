@@ -1,0 +1,60 @@
+.shop{
+    &_menu{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        &_search{
+            input{
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 10px 15px 10px 15px;
+                color: #666666;
+                font-size: 16px;
+            }
+        }
+        select{
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 10px 15px 10px 15px;
+            color: #666666;
+            font-size: 16px;
+        }
+    }
+    &_product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+
+        &_card{
+            width: 20%;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+            background-color: white;
+            padding: 15px;
+            &_text{
+                .h1{
+                    font-family: 'Oswald';
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                h3{
+                    font-family: 'Lato';
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #666666;
+                }
+                p{
+                    font-size: 14px;
+                  
+                }
+            }
+            &_img{
+                img{
+                    width: 250px;
+                    height: 250px;
+                    background-color: rgb(239, 239, 239);
+                }
+            }
+        }
+    }
+}
