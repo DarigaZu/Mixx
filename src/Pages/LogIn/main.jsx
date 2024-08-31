@@ -37,7 +37,7 @@
                                 placeholder="Login"
                                 {...register('logIn')} />
 
-                            <p style={{ color: "#323232" }}>{errors.logIn?.message}</p>
+                            <p style={{ color: "red" }}>{errors.logIn?.message}</p>
 
                             <div className="relative-eye">
                                 <input type={showPassword ? 'text' : 'password'}
@@ -50,7 +50,7 @@
                                 </button>
                             </div>
 
-                            <p style={{ color: "#323232" }}>{errors.password?.message}</p>
+                            <p style={{ color: "red" }}>{errors.password?.message}</p>
 
                             <button type="submit">Login</button>
                             <Link to='/signup'><p>Don't Have an Account?</p></Link>

@@ -13,13 +13,33 @@ a {
     img {
         width: 130px;
         height: 100px;
+        @media (max-width: 768px){
+            width: 110px;
+            height: 80px;
+        }
+        @media (max-width: 625px){
+            width: 90px;
+            height: 60px;
+        }
+        @media (max-width: 400px){
+            width: 85px;
+            height: 55px;
+        }
     }
 
     &_menu {
-        // ОТСТУП СВЕРХУ НАДО ДОБАВИТЬ
         margin-top: 20px;
         display: flex;
         gap: 100px;
+        @media (max-width: 625px){
+            gap: 70px;
+        }
+        @media (max-width: 570px){
+            gap: 50px;
+        }
+        @media (max-width: 475px){
+            gap: 20px;
+        }
 
         p {
 
@@ -34,6 +54,15 @@ a {
             font-size: 24px;
             font-weight: 500;
             color: black;
+            @media (max-width: 768px){
+                font-size: 18px;
+            }
+            @media (max-width: 625px){
+                font-size: 16px;
+            }
+            @media (max-width: 400px){
+                font-size: 14px;
+            }
         }
 
         
@@ -41,13 +70,18 @@ a {
     }
 
     &_icons {
-        // ОТСТУП СВЕРХУ НАДО ДОБАВИТЬ
         margin-top: 20px;
         display: flex;
         gap: 20px;
         &_icon {
             font-size: 23px;
             color: black;
+            @media (max-width: 768px){
+                font-size: 18px;
+            }
+            @media (max-width: 625px){
+                font-size: 14px;
+            }
             &:hover{
                 color: gray;
                 transition: 0.3s;
@@ -88,7 +122,6 @@ a {
                         color: gray;
                         transition: 0.3s;
                         transform: translateX(8px);
-                        /* Перемещение текста вправо при наведении */
                     }
                 }
             }

@@ -41,7 +41,7 @@ function SignUp() {
                             placeholder="Full Name"
                             {...register('fullName')} />
 
-                        <p style={{ color: "#323232" }}>{errors.fullName?.message}</p>
+                        <p style={{ color: "red" }}>{errors.fullName?.message}</p>
 
                         <input type="text"
                             name="email"
@@ -49,7 +49,7 @@ function SignUp() {
                             placeholder="Email"
                             {...register('email')} />
 
-                        <p style={{ color: "#323232", fontSize: "14px" }}>{errors.email?.message}</p>
+                        <p style={{ color: "red", fontSize: "14px" }}>{errors.email?.message}</p>
 
                         <div className="relative-eye">
                             <input type={showPassword ? 'text' : 'password'}
@@ -62,7 +62,7 @@ function SignUp() {
                             </button>
                         </div>
 
-                        <p style={{ color: "#323232" }}>{errors.password?.message}</p>
+                        <p style={{ color: "red" }}>{errors.password?.message}</p>
 
                         <input type="text"
                             name="confirmPassword"
@@ -71,7 +71,7 @@ function SignUp() {
                             className="confirm-password"
                             {...register('confirmPassword')} />
 
-                        <p style={{ ccolor: "#323232" }}>{errors.confirmPassword?.message}</p>
+                        <p style={{ color: "red" }}>{errors.confirmPassword?.message}</p>
                         <button type="submit">Register Now</button>
                         <Link to='/login'><p>Have an Account?</p></Link>
                     </form>

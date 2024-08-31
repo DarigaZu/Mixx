@@ -1,0 +1,74 @@
+.cart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    &_card {
+        width: 20%;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+        background-color: white;
+        padding: 15px;
+        position: relative;
+
+        &_img {
+            img {
+                width: 250px;
+                height: 250px;
+                background-color: rgb(239, 239, 239);
+            }
+
+            .cart_icon {
+                position: absolute;
+                top: 10px; 
+                right: 10px; 
+                font-size: 24px;
+                color: red;
+                transition: opacity 0.3s;
+                opacity: 1; 
+            }
+        }
+
+        &_text {
+            .h1 {
+                font-family: 'Oswald';
+                font-size: 16px;
+                font-weight: 500;
+            }
+            .h3 {
+                font-family: 'Lato';
+                font-weight: 400;
+                font-size: 14px;
+                color: #666666;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+.empty{
+    font-family: 'Lato';
+    font-size: 16px;
+    text-align: center;
+}
+.button{
+    background-color: rgb(176, 175, 175);
+    border: none;
+    color: white;
+    width: 180px;
+    height: 52px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 0px;
+    margin-top: 10px;
+
+    &:hover {
+        color: rgb(176, 175, 175);
+        background-color: white;
+        transition: 0.4s;
+    }
+}
+.empty_text{
+    text-align: center;
+}

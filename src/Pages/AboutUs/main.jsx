@@ -81,9 +81,11 @@ With Converse, you can easily create a stylish casual look that will highlight y
             </div>
 
             <div className="about_block4">
+            <div className="about_block4_links">
                 <Link to='/tshirt'><p style={{left:'1%'}}>VASILINCIAGA</p></Link>
                 <Link to='/shorts'><p style={{left:'35%'}}>LOUIS VUITTON</p></Link>
                 <Link to='/tshirt'><p style={{left:'69%'}}>VASILINCIAGA</p></Link>
+                </div>
                 <div className="about_block4_img">
                 <Link to='/tshirt'><img src={img_10}/></Link>
                 <Link to='/shorts'><img  src={img_11}/></Link>

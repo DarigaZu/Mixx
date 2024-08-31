@@ -77,7 +77,7 @@ function Home() {
                 <div className="home_block-1_text">
                     <h1>{slides[currentSlide].title}</h1>
                     <p>{slides[currentSlide].text}</p>
-                    <Link to='/category'><button>Go to shop</button></Link>
+                    <Link to='/category'><button>Go To Shop</button></Link>
                 </div>
                 <div className="home_block-1_img">
                     <img src={slides[currentSlide].img} alt="Clothes" />
@@ -97,8 +97,8 @@ function Home() {
                     </div>
 
                     <div className="home_block2_product_card_text">
-                        <h1>{product.brand_name}</h1>
-                        <h3>{product.name}</h3>
+                    <h1><Link to={`/shoes/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
+                    <h3><Link to={`/shoes/${product.id}`} className="name">{product.name}</Link></h3>
                         <p>{product.price}$</p>
                     </div>
                 </div>
@@ -117,8 +117,8 @@ function Home() {
                     </div>
 
                     <div className="home_block3_product_card_text">
-                        <h1>{product.brand_name}</h1>
-                        <h3>{product.name}</h3>
+                    <h1><Link to={`/tshirt/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
+                    <h3><Link to={`/tshirt/${product.id}`} className="name">{product.name}</Link></h3>
                         <p>{product.price}$</p>
                     </div>
                 </div>
@@ -136,8 +136,8 @@ function Home() {
                     </div>
 
                     <div className="home_block4_product_card_text">
-                        <h1>{product.brand_name}</h1>
-                        <h3>{product.name}</h3>
+                    <h1><Link to={`/shorts/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
+                    <h3><Link to={`/shorts/${product.id}`} className="name">{product.name}</Link></h3>
                         <p>{product.price}$</p>
                     </div>
                 </div>

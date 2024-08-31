@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './main.scss';
 
-function ProductDetails() {
+function ProductDetails({ setWishlist }) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [count, setCount] = useState(0);
@@ -16,6 +16,15 @@ function ProductDetails() {
         if (count > 0) {
             setCount(count - 1);
         }
+    };
+
+    const addToWishlist = () => {
+        setWishlist(prevWishlist => {
+            if (!prevWishlist.includes(product.id)) {
+                return [...prevWishlist, product.id];
+            }
+            return prevWishlist; 
+        });
     };
 
     useEffect(() => {
@@ -59,7 +68,7 @@ function ProductDetails() {
                 </div>
                 <div className="details_text_butt">
                     <button>Add to Cart</button>
-                    <button>Add to Wishlist</button>
+                    <button onClick={addToWishlist}>Add to Wishlist</button>
                 </div>
             </div>
         </div>
