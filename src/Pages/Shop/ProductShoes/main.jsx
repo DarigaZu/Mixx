@@ -1,4 +1,3 @@
-// Shorts.js
 import './main.scss';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';

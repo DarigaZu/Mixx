@@ -1,4 +1,3 @@
-// Shorts.js
 import './main.scss';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
@@ -14,11 +13,11 @@ function Shorts({ wishlist, setWishlist, setProducts, cart, setCart }) {
         async function getShorts() {
             try {
                 const res = await axios.get('https://66b1ec391ca8ad33d4f5befb.mockapi.io/ShortsAndSkirts');
-                console.log('Fetched shorts:', res.data);
+                console.log('Fetched t-shirt:', res.data);
                 setLocalProducts(res.data);
                 setProducts(res.data);
             } catch (error) {
-                console.error('Error fetching shorts:', error);
+                console.error('Error fetching t-shirt:', error);
             }
         }
         getShorts();
@@ -102,7 +101,7 @@ function Shorts({ wishlist, setWishlist, setProducts, cart, setCart }) {
                                     )}
                                 </div>
                             </div>
-                            <img src={product.img} alt={product.name} />
+                            <img className='img' src={product.img} alt={product.name} />
                         </div>
 
                         <div className="shop_product_card_text">

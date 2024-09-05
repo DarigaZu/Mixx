@@ -1,4 +1,3 @@
-// Shorts.js
 import './main.scss';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
@@ -102,7 +101,7 @@ function TShirt({ wishlist, setWishlist, setProducts, cart, setCart }) {
                                     )}
                                 </div>
                             </div>
-                            <img src={product.img} alt={product.name} />
+                            <img className='img' src={product.img} alt={product.name} />
                         </div>
 
                         <div className="shop_product_card_text">
