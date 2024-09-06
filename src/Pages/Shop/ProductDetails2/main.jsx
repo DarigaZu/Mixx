@@ -44,31 +44,31 @@ function ProductDetails2({ setWishlist }) {
     return (
         <div className="details container">
             <div className="details_img">
-                <img src={product.img} alt={product.name} />
+                <img src={product.img} alt={product.name} className='img'/>
             </div>
 
             <div className="details_text">
-                <h1>{product.brand_name}</h1>
-                <h3>{product.name}</h3>
+                <h1 className='h1'>{product.brand_name}</h1>
+                <h3 className='h3'>{product.name}</h3>
                 <div className="details_text_min2">
-                    <p>Price:</p>
-                    <p>{product.id >= 7 && product.id <= 8 ? `${product.price}₽` : `${product.price}$`}</p>
+                    <p className='p'>Price:</p>
+                    <p className='p'>{product.id >= 7 && product.id <= 8 ? `${product.price}₽` : `${product.price}$`}</p>
                 </div>
                 <div className="details_text_min">
-                    <p>Category:</p>
-                    <p>T-Shirt</p>
+                    <p className='p'>Category:</p>
+                    <p className='p'>T-Shirt</p>
                 </div>
                 <div className="details_text_min3">
-                    <p>Quantity:</p>
+                    <p className='p'>Quantity:</p>
                     <div className="details_text_min3_qty">
-                        <span onClick={decrement}>-</span>
-                        <span className="property-numb">{count}</span>
-                        <span onClick={increment}>+</span>
+                        <span className='span' onClick={decrement}>-</span>
+                        <span className="property-numb span">{count}</span>
+                        <span className='span' onClick={increment}>+</span>
                     </div>
                 </div>
                 <div className="details_text_butt">
-                    <button>Add to Cart</button>
-                    <button onClick={addToWishlist}>Add to Wishlist</button>
+                    <button className='button'>Add to Cart</button>
+                    <button className='button' onClick={addToWishlist}>Add to Wishlist</button>
                 </div>
             </div>
         </div>
