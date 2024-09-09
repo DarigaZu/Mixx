@@ -13,11 +13,10 @@ function TShirt({ wishlist, setWishlist, setProducts, cart, setCart }) {
         async function getTShirt() {
             try {
                 const res = await axios.get('https://66b0d7d66a693a95b53a6ab9.mockapi.io/mixTShirts');
-                console.log('Fetched t-shirt:', res.data);
                 setLocalProducts(res.data);
                 setProducts(res.data);
             } catch (error) {
-                console.error('Error fetching t-shirt:', error);
+                console.error('Error fetching shoes:', error);
             }
         }
         getTShirt();
@@ -25,21 +24,17 @@ function TShirt({ wishlist, setWishlist, setProducts, cart, setCart }) {
 
     const toggleWishlist = (productId) => {
         setWishlist((prevWishlist) => {
-            if (prevWishlist.includes(productId)) {
-                return prevWishlist.filter(id => id !== productId);
-            } else {
-                return [...prevWishlist, productId];
-            }
+            return prevWishlist.includes(productId)
+                ? prevWishlist.filter(id => id !== productId)
+                : [...prevWishlist, productId];
         });
     };
 
     const toggleCart = (productId) => {
         setCart((prevCart) => {
-            if (prevCart.includes(productId)) {
-                return prevCart.filter(id => id !== productId);
-            } else {
-                return [...prevCart, productId];
-            }
+            return prevCart.includes(productId)
+                ? prevCart.filter(id => id !== productId) 
+                : [...prevCart, productId]; 
         });
     };
 
@@ -63,7 +58,6 @@ function TShirt({ wishlist, setWishlist, setProducts, cart, setCart }) {
                     <option value="highToLow">Sort By High To Low</option>
                     <option value="lowToHigh">Sort By Low To High</option>
                 </select>
-
                 <div className="shop_menu_search">
                     <input type="search" placeholder="Search..." onChange={(event) => setSearch(event.target.value)} />
                 </div>
@@ -76,38 +70,25 @@ function TShirt({ wishlist, setWishlist, setProducts, cart, setCart }) {
                             <div className="shop_product_card_img_wish">
                                 <div>
                                     {wishlist.includes(product.id) ? (
-                                        <IoMdHeart
-                                            className='wishlist active'
-                                            onClick={() => toggleWishlist(product.id)}
-                                        />
+                                        <IoMdHeart className='wishlist active' onClick={() => toggleWishlist(product.id)} />
                                     ) : (
-                                        <IoMdHeartEmpty
-                                            className='wishlist'
-                                            onClick={() => toggleWishlist(product.id)}
-                                        />
+                                        <IoMdHeartEmpty className='wishlist' onClick={() => toggleWishlist(product.id)} />
                                     )}
                                 </div>
                                 <div>
                                     {cart.includes(product.id) ? (
-                                        <IoCart
-                                            className='cart active'
-                                            onClick={() => toggleCart(product.id)}
-                                        />
+                                        <IoCart className='cart active' onClick={() => toggleCart(product.id)} />
                                     ) : (
-                                        <IoCartOutline
-                                            className='cart'
-                                            onClick={() => toggleCart(product.id)}
-                                        />
+                                        <IoCartOutline className='cart' onClick={() => toggleCart(product.id)} />
                                     )}
                                 </div>
                             </div>
                             <img className='img' src={product.img} alt={product.name} />
                         </div>
-
                         <div className="shop_product_card_text">
                             <h1><Link to={`/tshirt/${product.id}`} className='h1'>{product.brand_name}</Link></h1>
                             <h3><Link to={`/tshirt/${product.id}`} className="h3">{product.name}</Link></h3>
-                            <p>{product.price}$</p>
+                            <p className='p'>{product.id >= 21 && product.id <= 24 ? `${product.price}₽` : `${product.price}$`}</p>
                         </div>
                     </div>
                 ))}

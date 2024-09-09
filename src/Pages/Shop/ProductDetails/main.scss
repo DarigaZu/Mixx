@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
+
     @media (max-width: 950px) {
         flex-direction: column;
         align-items: center;
@@ -64,11 +65,12 @@
                 width: 190px;
                 height: 50px;
                 font-size: 16px;
+                transition: 0.3s;
 
-                @media (max-width: 950px) {
-                    width: 250px;
-                    height: 60px;
-                    font-size: 20px;
+                &:hover {
+                    background-color: white;
+                    color: black;
+
                 }
 
                 @media (max-width: 950px) {
@@ -77,9 +79,21 @@
                     font-size: 18px;
                 }
 
+                @media (max-width: 600px) {
+                    width: 195px;
+                    height: 45px;
+                    font-size: 16px;
+                }
+
+                @media (max-width: 500px) {
+                    width: 170px;
+                    height: 35px;
+                    font-size: 14px;
+                }
+
                 @media (max-width: 425px) {
-                    width: 180px;
-                    height: 40px;
+                    width: 130px;
+                    height: 30px;
                     font-size: 12px;
                 }
             }
@@ -142,6 +156,7 @@
             @media (max-width: 768px) {
                 font-size: 18px;
             }
+
             @media (max-width: 425px) {
                 font-size: 12px;
             }
@@ -162,48 +177,48 @@
         &_min3 {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px;
 
             p {
                 display: flex;
                 justify-content: center;
             }
 
-            &_qty {
-                background-color: #F8F8F8;
-                padding: 8px;
-
-                .property-numb {
-                    border-left: 1px solid rgba(69, 69, 70, 0.07);
-                    border-right: 1px solid rgba(69, 69, 70, 0.07);
-
-                }
-
-                .span {
-                    padding-left: 15px;
-                    padding-right: 15px;
-                    color: #323232;
-                    font-size: 20px;
-
-                    @media (max-width:950px) {
-                        padding-left: 20px;
-                        font-size: 24px;
-                        padding-right: 20px;
-                    }
-
-                    @media (max-width: 768px) {
-                        padding-left: 18px;
-                        font-size: 22px;
-                        padding-right: 18px;
-                    }
-                    @media (max-width: 425px) {
-                        padding-left: 10px;
-                        font-size: 12px;
-                        padding-right: 10px;
-                    }
-
-                }
-            }
         }
     }
 }
+
+// &_qty {
+//     background-color: #F8F8F8;
+//     padding: 8px;
+
+//     .property-numb {
+//         border-left: 1px solid rgba(69, 69, 70, 0.07);
+//         border-right: 1px solid rgba(69, 69, 70, 0.07);
+
+//     }
+
+//     .span {
+//         padding-left: 15px;
+//         padding-right: 15px;
+//         color: #323232;
+//         font-size: 20px;
+
+//         @media (max-width:950px) {
+//             padding-left: 20px;
+//             font-size: 24px;
+//             padding-right: 20px;
+//         }
+
+//         @media (max-width: 768px) {
+//             padding-left: 18px;
+//             font-size: 22px;
+//             padding-right: 18px;
+//         }
+//         @media (max-width: 425px) {
+//             padding-left: 10px;
+//             font-size: 12px;
+//             padding-right: 10px;
+//         }
+
+//     }
+// }

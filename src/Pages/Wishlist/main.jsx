@@ -1,4 +1,3 @@
-// Wishlist.js
 import './main.scss';
 import React, { useState } from 'react';
 import { IoMdHeart } from "react-icons/io";
@@ -6,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 function Wishlist({ wishlist, products, setWishlist }) {
     const [hoveredItemId, setHoveredItemId] = useState(null);
-
-    console.log('Wishlist props:', { wishlist, products });
 
     if (!products || products.length === 0) {
         return (
@@ -47,7 +44,12 @@ function Wishlist({ wishlist, products, setWishlist }) {
                         <div className="wishlist_card_text">
                             <h1 className='h1'>{item.brand_name}</h1>
                             <h3 className="h3">{item.name}</h3>
-                            <p>{item.price}₽</p>
+                            <p className='p'>
+                                {(item.id >= 21 && item.id <= 24) || (item.id >= 31 && item.id <= 32)
+                                    ? `${item.price}₽`
+                                    : `${item.price}$`}
+                            </p>
+
                         </div>
                     </div>
                 ))

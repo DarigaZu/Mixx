@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './main.scss';
 
-function ProductDetails2({ setWishlist }) {
+function ProductDetails2({ setWishlist, setCart }) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [count, setCount] = useState(0);
@@ -16,6 +16,15 @@ function ProductDetails2({ setWishlist }) {
         if (count > 0) {
             setCount(count - 1);
         }
+    };
+
+    const addToCart = () => {
+        setCart(prevCart => {
+            if (!prevCart.includes(product.id)) {
+                return [...prevCart, product.id];
+            }
+            return prevCart;
+        });
     };
 
     const addToWishlist = () => {
@@ -52,22 +61,18 @@ function ProductDetails2({ setWishlist }) {
                 <h3 className='h3'>{product.name}</h3>
                 <div className="details_text_min2">
                     <p className='p'>Price:</p>
-                    <p className='p'>{product.id >= 7 && product.id <= 8 ? `${product.price}₽` : `${product.price}$`}</p>
+                    <p className='p'>{product.id >= 21 && product.id <= 24 ? `${product.price}₽` : `${product.price}$`}</p>
                 </div>
                 <div className="details_text_min">
                     <p className='p'>Category:</p>
                     <p className='p'>T-Shirt</p>
                 </div>
                 <div className="details_text_min3">
-                    <p className='p'>Quantity:</p>
-                    <div className="details_text_min3_qty">
-                        <span className='span' onClick={decrement}>-</span>
-                        <span className="property-numb span">{count}</span>
-                        <span className='span' onClick={increment}>+</span>
-                    </div>
+                    <p className='p'>Color:</p>
+                    <p className='p'>{product.color}</p>
                 </div>
                 <div className="details_text_butt">
-                    <button className='button'>Add to Cart</button>
+                    <button className='button' onClick={addToCart}>Add to Cart</button>
                     <button className='button' onClick={addToWishlist}>Add to Wishlist</button>
                 </div>
             </div>

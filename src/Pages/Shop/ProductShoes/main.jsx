@@ -13,7 +13,6 @@ function Shoes({ wishlist, setWishlist, setProducts, cart, setCart }) {
         async function getShoes() {
             try {
                 const res = await axios.get('https://66b0d7d66a693a95b53a6ab9.mockapi.io/mix');
-                console.log('Fetched shoes:', res.data);
                 setLocalProducts(res.data);
                 setProducts(res.data);
             } catch (error) {
@@ -25,20 +24,17 @@ function Shoes({ wishlist, setWishlist, setProducts, cart, setCart }) {
 
     const toggleWishlist = (productId) => {
         setWishlist((prevWishlist) => {
-            if (prevWishlist.includes(productId)) {
-                return prevWishlist.filter(id => id !== productId);
-            } else {
-                return [...prevWishlist, productId];
-            }
+            return prevWishlist.includes(productId)
+                ? prevWishlist.filter(id => id !== productId)
+                : [...prevWishlist, productId];
         });
     };
 
-
     const toggleCart = (productId) => {
         setCart((prevCart) => {
-            const newCart = prevCart.includes(productId) ? prevCart.filter(id => id !== productId) : [...prevCart, productId];
-            console.log('Updated cart:', newCart); // Проверка состояния корзины
-            return newCart;
+            return prevCart.includes(productId)
+                ? prevCart.filter(id => id !== productId) 
+                : [...prevCart, productId]; 
         });
     };
 
@@ -62,7 +58,6 @@ function Shoes({ wishlist, setWishlist, setProducts, cart, setCart }) {
                     <option value="highToLow">Sort By High To Low</option>
                     <option value="lowToHigh">Sort By Low To High</option>
                 </select>
-
                 <div className="shop_menu_search">
                     <input type="search" placeholder="Search..." onChange={(event) => setSearch(event.target.value)} />
                 </div>
@@ -75,36 +70,21 @@ function Shoes({ wishlist, setWishlist, setProducts, cart, setCart }) {
                             <div className="shop_product_card_img_wish">
                                 <div>
                                     {wishlist.includes(product.id) ? (
-                                        <IoMdHeart
-                                            className='wishlist active'
-                                            onClick={() => toggleWishlist(product.id)}
-                                        />
+                                        <IoMdHeart className='wishlist active' onClick={() => toggleWishlist(product.id)} />
                                     ) : (
-                                        <IoMdHeartEmpty
-                                            className='wishlist'
-                                            onClick={() => toggleWishlist(product.id)}
-                                        />
+                                        <IoMdHeartEmpty className='wishlist' onClick={() => toggleWishlist(product.id)} />
                                     )}
                                 </div>
                                 <div>
-                                    <IoCartOutline
-                                        className='cart'
-                                        onClick={() => {
-                                            toggleCart(product.id);
-                                            alert(`${product.name} добавлен в корзину!`);
-                                        }}
-                                    />
-                                    {cart.includes(product.id) && (
-                                        <IoCart
-                                            className='cart active'
-                                            onClick={() => toggleCart(product.id)}
-                                        />
+                                    {cart.includes(product.id) ? (
+                                        <IoCart className='cart active' onClick={() => toggleCart(product.id)} />
+                                    ) : (
+                                        <IoCartOutline className='cart' onClick={() => toggleCart(product.id)} />
                                     )}
                                 </div>
                             </div>
-                            <img src={product.img} alt={product.name} />
+                            <img className='img' src={product.img} alt={product.name} />
                         </div>
-
                         <div className="shop_product_card_text">
                             <h1><Link to={`/shoes/${product.id}`} className='h1'>{product.brand_name}</Link></h1>
                             <h3><Link to={`/shoes/${product.id}`} className="h3">{product.name}</Link></h3>
