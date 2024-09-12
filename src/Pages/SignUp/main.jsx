@@ -49,7 +49,7 @@ function SignUp() {
                             placeholder="Email"
                             {...register('email')} />
 
-                        <p style={{ color: "red", fontSize: "14px" }}>{errors.email?.message}</p>
+                        <p style={{ color: "red"}}>{errors.email?.message}</p>
 
                         <div className="relative-eye">
                             <input type={showPassword ? 'text' : 'password'}

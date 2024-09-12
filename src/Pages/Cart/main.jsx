@@ -91,22 +91,25 @@ function Cart({ cart, products2, setCart }) {
                             <img src={item.img} alt={item.name} />
                         </div>
                         <div className="cart_card_text">
+                        <div className="cart_card_text_main">
                             <h1 className='h1'>{item.brand_name}</h1>
                             <h3 className="h3">{item.name}</h3>
                         </div>
-                        <div className="cart_card_quantity">
+                        <div className="cart_card_text_menu">
+                        <div className="cart_card_text_menu_quantity">
                             <span className="decrease" onClick={() => decreaseQuantity(item.id)}> - </span>
                             <span className="quantity">{quantity}</span>
                             <span className="increase" onClick={() => increaseQuantity(item.id)}> + </span>
                         </div>
-                        <div className="cart_card_price">
+                        <div className="cart_card_text_menu_price">
                             <p>
                                 {(item.id >= 21 && item.id <= 24) || (item.id >= 31 && item.id <= 32)
                                     ? `${totalPrice}₽`
                                     : `${totalPrice}$`}
                             </p>
                         </div>
-
+                        </div>
+                        </div>
 
                     </div>
 

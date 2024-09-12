@@ -158,7 +158,13 @@
     font-family: 'Lato';
     font-size: 16px;
     text-align: center;
-
+    @media (max-width: 625px) {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    @media (max-width: 425px) {
+        font-size: 12px;
+    }
 }
 .button{
     background-color: rgb(176, 175, 175);
@@ -170,7 +176,16 @@
     font-weight: 600;
     border-radius: 0px;
     margin-top: 10px;
-
+    @media (max-width: 625px) {
+        width: 160px;
+        height: 45px;
+        font-size: 14px;
+    }
+    @media (max-width: 425px) {
+        width: 140px;
+        height: 42px;
+        font-size: 12px;
+    }
     &:hover {
         color: rgb(176, 175, 175);
         background-color: white;
