@@ -23,7 +23,7 @@ function Header({ wishlist }) {
             <nav className='nav'>
                 <img src={logo} alt="Logo" />
                 <div className="nav_menu">
-                    <Link to='/Mix'><p>Home</p></Link>
+                    <Link to='/Mixx'><p>Home</p></Link>
                     <Link to='/aboutus'><p>About Us</p></Link>
                     <Link to='/category'><p>Category</p></Link>
                 </div>

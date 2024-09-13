@@ -73,7 +73,7 @@ function Cart({ cart, products2, setCart }) {
         return (
             <div className='empty_text'>
                 <p className='empty'>Your cart is empty.</p>
-                <Link to='/Mix'><button className='button'>Go To Home</button></Link>
+                <Link to='/Mixx'><button className='button'>Go To Home</button></Link>
             </div>
         );
     }

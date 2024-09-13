@@ -22,7 +22,7 @@ function Layout({ wishlist, setWishlist, cart, setCart }) {
         <>
             <Header wishlist={wishlist} cart={cart} />
             <Routes>
-                <Route path='/Mix' element={<Home />} />
+                <Route path='/Mixx' element={<Home />} />
                 <Route path='/aboutus' element={<AboutUs />} />
                 <Route path='/wishlist' element={<Wishlist wishlist={wishlist} products={products} setWishlist={setWishlist} />} />
                 <Route path='/cart' element={<Cart cart={cart} products2={products} setCart={setCart} />} />
