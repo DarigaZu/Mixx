@@ -56,7 +56,7 @@ function Wishlist({ wishlist, products, setWishlist }) {
             ) : (
                 <div>
                     <p className='empty'>Your favorites list is empty.</p>
-                    <Link to='/Mix'><button className='button'>Go To Home</button></Link>
+                    <Link to='/'><button className='button'>Go To Home</button></Link>
                 </div>
             )}
         </div>
