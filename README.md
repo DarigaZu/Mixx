@@ -1,8 +1,23 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Mix
+Mix — это интернет-магазин, где собраны 5 популярных брендов в одну кучу.  
+## Описание
+Mix — это интернет-магазин, где собраны 5 популярнх брендов в одну кучу. Здесь представлены 3 категории одежды: обувь, футболки, шорты и юбки. В основном одежда для молодежи!
+## Причины неработоспособности
+- Отсутствие серверной части.
+## Функционал
+Разработан на React Vite
+- **React Router** — для переходов между страницами.
+- **React Hook Form** — для обработки форм и валидации данных, проверяя корректность ввода.
+- **Избранное** — возможность сохранять любимые товары.
+- **Корзина** — для удобного оформления заказов.
+## Установка
+Если вы хотите запустить проект локально, выполните следующие шаги:
+1. Клонируйте репозиторий:
+   ```
+   git clone https://github.com/DarigaZu/Mix.git
+2. Установите зависимости:
+   ```
+   npm install
+3. Запустите проект:
+   ```
+   npm run dev   
