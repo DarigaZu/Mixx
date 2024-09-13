@@ -1,39 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import './main.scss';
 import img_1 from '../../images/block1.png';
 import img_2 from '../../images/block11.png';
 
 function Home() {
-    const [products, setProducts] = useState([])
-    const [products2, setProducts2] = useState([])
-    const [products3, setProducts3] = useState([])
+    const [products, setProducts] = useState([]);
+    const [products2, setProducts2] = useState([]);
+    const [products3, setProducts3] = useState([]);
 
     useEffect(() => {
         async function getShoes() {
-            const res = await axios.get('https://66b0d7d66a693a95b53a6ab9.mockapi.io/mix')
-            setProducts(res.data)
+            const res = await axios.get('https://66b0d7d66a693a95b53a6ab9.mockapi.io/mix');
+            console.log(res.data); // Логируем данные
+            setProducts(res.data);
         }
-        getShoes()
-    }, [])
-
+        getShoes();
+    }, []);
 
     useEffect(() => {
         async function getTShirt() {
-            const res = await axios.get('https://66b0d7d66a693a95b53a6ab9.mockapi.io/mixTShirts')
-            setProducts2(res.data)
+            const res = await axios.get('https://66b0d7d66a693a95b53a6ab9.mockapi.io/mixTShirts');
+            console.log(res.data); // Логируем данные
+            setProducts2(res.data);
         }
-        getTShirt()
-    }, [])
+        getTShirt();
+    }, []);
 
     useEffect(() => {
         async function getShorts() {
-            const res = await axios.get('https://66b1ec391ca8ad33d4f5befb.mockapi.io/ShortsAndSkirts')
-            setProducts3(res.data)
+            const res = await axios.get('https://66b1ec391ca8ad33d4f5befb.mockapi.io/ShortsAndSkirts');
+            console.log(res.data); // Логируем данные
+            setProducts3(res.data);
         }
-        getShorts()
-    }, [])
+        getShorts();
+    }, []);
 
     const slides = [
         {
@@ -55,7 +57,7 @@ function Home() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-        }, 5000); 
+        }, 5000);
 
         return () => clearInterval(interval);
     }, [slides.length]);
@@ -67,6 +69,11 @@ function Home() {
     const prevSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
     };
+
+    // Индикатор загрузки
+    if (products.length === 0 || products2.length === 0 || products3.length === 0) {
+        return <div>Загрузка...</div>;
+    }
 
     return (
         <div className="home container">
@@ -90,61 +97,59 @@ function Home() {
             <div className="home_block2">
                 <h1 className='h1'>Shoes</h1>
                 <div className="home_block2_product">
-            {products.slice(0,4).map((product) => (
-                <div className="home_block2_product_card" key={product.id}>
-                    <div className="home_block2_product_card_img">
-                        <img src={product.img} />
-                    </div>
+                    {products.slice(0, 4).map((product) => (
+                        <div className="home_block2_product_card" key={product.id}>
+                            <div className="home_block2_product_card_img">
+                                <img src={product.img} alt={product.name} />
+                            </div>
 
-                    <div className="home_block2_product_card_text">
-                    <h1><Link to={`/shoes/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
-                    <h3><Link to={`/shoes/${product.id}`} className="name">{product.name}</Link></h3>
-                        <p>{product.price}$</p>
-                    </div>
+                            <div className="home_block2_product_card_text">
+                                <h1><Link to={`/shoes/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
+                                <h3><Link to={`/shoes/${product.id}`} className="name">{product.name}</Link></h3>
+                                <p>{product.price}$</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
             </div>
 
-            
             <div className="home_block3">
                 <h1 className='h1'>T-Shirt</h1>
                 <div className="home_block3_product">
-            {products2.slice(0,4).map((product) => (
-                <div className="home_block3_product_card" key={product.id}>
-                    <div className="home_block3_product_card_img">
-                        <img src={product.img} />
-                    </div>
+                    {products2.slice(0, 4).map((product) => (
+                        <div className="home_block3_product_card" key={product.id}>
+                            <div className="home_block3_product_card_img">
+                                <img src={product.img} alt={product.name} />
+                            </div>
 
-                    <div className="home_block3_product_card_text">
-                    <h1><Link to={`/tshirt/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
-                    <h3><Link to={`/tshirt/${product.id}`} className="name">{product.name}</Link></h3>
-                        <p>{product.price}$</p>
-                    </div>
+                            <div className="home_block3_product_card_text">
+                                <h1><Link to={`/tshirt/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
+                                <h3><Link to={`/tshirt/${product.id}`} className="name">{product.name}</Link></h3>
+                                <p>{product.price}$</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
             </div>
 
             <div className="home_block4">
                 <h1 className='h1'>Shorts And Skirts</h1>
                 <div className="home_block4_product">
-            {products3.slice(0,4).map((product) => (
-                <div className="home_block4_product_card" key={product.id}>
-                    <div className="home_block4_product_card_img">
-                        <img src={product.img} />
-                    </div>
+                    {products3.slice(0, 4).map((product) => (
+                        <div className="home_block4_product_card" key={product.id}>
+                            <div className="home_block4_product_card_img">
+                                <img src={product.img} alt={product.name} />
+                            </div>
 
-                    <div className="home_block4_product_card_text">
-                    <h1><Link to={`/shorts/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
-                    <h3><Link to={`/shorts/${product.id}`} className="name">{product.name}</Link></h3>
-                        <p>{product.price}$</p>
-                    </div>
+                            <div className="home_block4_product_card_text">
+                                <h1><Link to={`/shorts/${product.id}`} className='brand'>{product.brand_name}</Link></h1>
+                                <h3><Link to={`/shorts/${product.id}`} className="name">{product.name}</Link></h3>
+                                <p>{product.price}$</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
-        </div>
             </div>
-
         </div>
     );
 }
