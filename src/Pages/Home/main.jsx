@@ -41,7 +41,7 @@ function Home() {
         {
             id: 1,
             title: "Discover the best in fashion",
-            text: "This is an online store that contains popular brands. Explore our exclusive collection featuring top brands such as Balenciaga, Levi's, Vasilinciaga, Converse and Louis Vuitton. Find your perfect style with our selection: T-shirts: stylish and fashionable items from famous brands. Shoes: High quality shoes that catch the eye. Shirts: Elegant and sophisticated designs for any occasion. Immerse yourself in the world of fashion with MIX and redefine your wardrobe.",
+            text: "This is an online store that contains popular brands. Explore our exclusive collection featuring top brands such as Balenciaga, Levi's, Vasilinciaga, Converse and Louis Vuitton. Find your perfect style with our selection: t-shirts: stylish and fashionable items from famous brands. Shoes: High quality shoes that catch the eye. Shirts: Elegant and sophisticated designs for any occasion. Immerse yourself in the world of fashion with MIX and redefine your wardrobe.",
             img: img_1
         },
         {
